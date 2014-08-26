@@ -9,7 +9,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y -q build-essential ruby1.9.3 python2.7 ruby-bundler libicu-dev libreadline-dev libssl-dev zlib1g-dev git-core
 RUN apt-get clean
-RUN rm -rf /var/cache/apt/archies/* /var/lib/apt/lists/*
+RUN rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 # Install gollum
 RUN gem install gollum redcarpet github-markdown
