@@ -1,10 +1,9 @@
-## docker-gollum
+# docker-gollum
 
-This Dockerfile is a simply install gollum.
+This Dockerfile is a simply install [gollum](https://github.com/gollum/gollum).
 
 
 ## Installation
-
 	docker pull suttang/gollum
 
 ## Usage
@@ -16,7 +15,7 @@ This Dockerfile is a simply install gollum.
     # Check container port
     sudo docker port gollum
     # 0.0.0.0:49157
-    
+
     wget http://localhost:49157
 
 ### Change port to 80
@@ -28,7 +27,7 @@ This Dockerfile is a simply install gollum.
 
 	sudo docker run -d -P --name gollum suttang/gollum --allow-uploads --live-preview
 
-[github.com/gollum/gollum](https://github.com/gollum/gollum#running)
+To add more options , checkout this link [gollum options](https://github.com/gollum/gollum#running).
 
 ### Use wikidata in host filesystem
 
@@ -53,7 +52,7 @@ This Dockerfile is a simply install gollum.
 
 	sudo docker run -d -P --name gollum -v ~/wikidata:/root/wikidata -e VIRTUAL_HOST=wiki.example.com -e VIRTUAL_PORT=80 -p 80 suttang/gollum --allow-uploads --config /root/wikidata/config.rb --port 80
 
-[github.com/jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy)
+[nginx-proxy](https://github.com/jwilder/nginx-proxy)
 
 ### Customize suttang/gollum image
 
@@ -64,8 +63,3 @@ This Dockerfile is a simply install gollum.
 	sudo docker commit -m "customized suttang/gollum by myself" CONTAINER_ID YOURNAME/gollum
 
 or create new Dockerfile with `FROM suttang/gollum`
-
-
-
-
-
